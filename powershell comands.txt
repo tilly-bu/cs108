@@ -1,0 +1,19 @@
+pipenv powershell - to start off  with
+python manage.py runserver - gets the IP address 
+ls/dir - show you the files in the directory 
+
+
+git - a way to save your code, make sure its not lost
+
+heroku - a way to make your application public so that graders (and any audience you want) can see its  
+        - we use heroku becuase the BU system can't support heroku 
+
+    2 python manage.py runserver
+   3 pipenv lock
+   4 git status
+   5 git commit -A
+   6 git add -a
+   7 git add -A
+   8 git commit -m "added Pipfile"
+   9 git push heroku master
+

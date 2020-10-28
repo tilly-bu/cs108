@@ -17,7 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 #project levl url
+#list of the apps in this project?
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('', include('hello_world.urls' ))
+    path ('hw/', include('hello_world.urls' )),
+    path('',include('pages.urls')),
+
 ]
