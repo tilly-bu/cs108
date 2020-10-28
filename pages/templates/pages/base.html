@@ -1,0 +1,21 @@
+<!--pages/templates/pages/base.html-->
+<html >
+    <head>
+        <title>Our Website</title>
+    </head>
+    <body>
+    <header>
+        <!--asking django to generate a URL for each of these in whatever page uses this base code-->
+        <a href="{% url 'home' %}">Home</a>|
+        <a href="{% url 'about' %}">About</a> |
+        <a href="{% url 'schedule' %}">Schedule</a>
+    </header>
+    <!--this content block will be filled in by another template 
+    which extends this base.html page-->    
+        {% block content %}
+        {% endblock %}     
+
+        <hr> This page was brought to you by tilahung@bu.edu
+        
+    </body>
+</html>

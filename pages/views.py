@@ -8,4 +8,12 @@ class HomePageView(TemplateView):
 
     template_name = 'pages/home.html'
 
+class AboutPageView(TemplateView): 
+    '''specialized version of the template view to display our 'about' page'''
 
+    template_name='pages/about.html'
+
+class SchedulePageView(TemplateView): 
+    '''specialized version of the template view to display our 'schedule' page'''
+
+    template_name='pages/schedule.html'
