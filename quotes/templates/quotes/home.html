@@ -1,0 +1,19 @@
+<!--quotes/home.html-->
+
+<h1>Showing all Quotes</h1>
+
+<!--Display the data from the context data-->
+<ul>
+   {% for quote in quotes %}
+    <li> {{quote.text}} - {quote.author} <br> 
+        <img src="{{quote.image_url}} " style="max-width: 400;">
+
+    </li>
+    
+
+    {% endfor %} 
+
+</ul>
+
+<!--two curly braces tells us its a context object calling, we spicified that it would be called 
+'qoutes' in our views file -->

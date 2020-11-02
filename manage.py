@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env pythonv
+# management script , for running server and managing files
+
 """Django's command-line utility for administrative tasks."""
 import os
 import sys

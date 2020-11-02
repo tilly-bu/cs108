@@ -1,1 +1,1 @@
-https://desolate-hamlet-27504.herokuapp.com/
+https://git.heroku.com/desolate-hamlet-27504.git
