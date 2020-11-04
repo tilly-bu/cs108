@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView , DetailView
-from .models import Quote
+from .models import Quote , Person
 import random
 
 class HomePageView(ListView): #present many objects from one model in a single screen? 
@@ -18,7 +18,7 @@ class QuotePageView(DetailView):
     context_object_name = "quote" 
 
 class RandomQuotePageView(DetailView): 
-    '''Display a single qoute item'''
+    '''Display a single quote item'''
     model = Quote #retrive Quote obejcts from the model database 
     template_name = 'quotes/quote.html' #provide the name of the template we will use to display the data and create file 'home'
     context_object_name = "quote" 
@@ -31,6 +31,12 @@ class RandomQuotePageView(DetailView):
         q = random.choice(quotes) 
         return q 
 
+
+class PersonPageView(DetailView): 
+    '''Display a single persion '''
+    model = Person 
+    template_name = 'quotes/person.html' #provide the name of the template we will use to display the data and create file 'home'
+    context_object_name = "person" 
 
 
 
