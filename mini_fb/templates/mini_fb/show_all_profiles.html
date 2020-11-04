@@ -1,0 +1,29 @@
+
+<!--HTML Template of display for mini_fb profile listing-->
+
+<!--display context data-->
+
+<h1>Showing all Profiles</h1>
+
+{% for profile in profiles %}
+<ul>                            
+    <li>  {{profile}}  </li>
+</ul>
+{% endfor %}
+
+
+<!--{{profiles}} 
+
+<!----
+<html>
+    <h1>Profile listing</h1>
+
+    <ul>
+        {% for profile in Profiles %}
+        <li> {profile.first_name} {profile.last_name} ; <br> Email-address : {profile.email_address} <br>
+            <img src="{{profile.img_src}}" style="max-width: 400;" >
+
+        </li>
+        {% endfor %}
+    </ul>
+</html>  -->

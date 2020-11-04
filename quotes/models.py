@@ -9,6 +9,8 @@ class Quote(models.Model):
     author = models.TextField(blank=True) 
     image_url = models.URLField (blank=True) # feild that will accept image url 
 
+    #!! remember any time you change a model you have to make a migration : makemigration then migrate{}
+
     #produce a string representation of this object 
     def __str__(self): 
         """return a formatted string that will output the data attributes"""

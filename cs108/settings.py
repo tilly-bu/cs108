@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hello_world.apps.HelloWorldConfig',
     'pages.apps.PagesConfig', 
-    'quotes.apps.QuotesConfig',#new application
+    'quotes.apps.QuotesConfig',
+    'mini_fb.apps.MiniFbConfig',#new application
     
 ]
 
@@ -61,6 +62,7 @@ TEMPLATES = [
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
+            'string_if_invalid':"NameError, template context variable is not defined",
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
