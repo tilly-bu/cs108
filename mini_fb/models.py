@@ -23,7 +23,7 @@ class StatusMessage (models.Model):
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
 
     def __str__ (self): 
-        return f'{self.message} ,' %time.ctime()
+        return f'{self.message} ,' %time.ctime()p
 
 
 
