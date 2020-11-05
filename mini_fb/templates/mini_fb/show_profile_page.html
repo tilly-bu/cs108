@@ -1,6 +1,7 @@
+{% extends 'mini_fb/base.html' %}
 
+{% block content %}
 <center>
-
 <h1>
     {{Profile.first_name}} - {{Profile.last_name}}
 </h1>
@@ -11,4 +12,8 @@
 
 Emalil Address : {{Profile.email_address}}
 </h3>
-</center>
+
+
+</center> 
+{% endblock %}
+

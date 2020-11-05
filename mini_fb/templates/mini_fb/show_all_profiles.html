@@ -2,7 +2,9 @@
 <!--HTML Template of display for mini_fb profile listing-->
 
 <!--display context data-->
+{% extends 'mini_fb/base.html' %}
 
+{% block content %}
 <h1>Showing all Profiles</h1>
 
 {% for profile in profiles %}
@@ -10,6 +12,9 @@
     <li>  {{profile}}  </li>
 </ul>
 {% endfor %}
+
+
+{% endblock %}
 
 
 <!--{{profiles}} 
