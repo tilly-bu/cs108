@@ -1,4 +1,5 @@
 from django.db import models
+
 import time
 
 class Profile (models.Model):
@@ -15,18 +16,19 @@ class Profile (models.Model):
 
         return f'First Name: {self.first_name} ,Last Name: {self.last_name} , e-mail: {self.email_address}: {self.img_src}'
 
+    # def get_absolute_url(self): 
+    #     "Provide a URL to show this object"
+    #     return reverse ('quote', kwargs={'pk'}
         
 
-class StatusMessage (models.Model): 
-    """status message""" 
-    message = models.TextField(blank=True)
-    profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
+# class StatusMessage (models.Model): 
+#     """status message""" 
+#     message = models.TextField(blank=True)
+#     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
 
-    def __str__ (self): 
-        return f'{self.message} ,' %time.ctime()p
-
-
+#     def __str__ (self): 
+#         return f'{self.message} ,' %time.ctime()
 
 
 
-# Create your models here.
+

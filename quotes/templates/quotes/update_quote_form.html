@@ -1,0 +1,27 @@
+{% extends 'quotes/base.html' %}
+
+{% block content %}
+
+
+
+<h1>Update quote</h1>
+
+<form method="POST">
+    
+    {% csrf_token %}
+
+    <!--{{form.as_p}} ##paragraph style formating-->
+
+    <!--as a table :-->
+    <table>
+        {{form.as_table}}
+        <tr>
+            <td> <!--empty colunm>  --> </td>
+            <td> <input type="submit" value="Update a quote!"> </td>
+        </tr>
+    </table>
+   
+    
+</form>
+
+{% endblock %}

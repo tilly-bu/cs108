@@ -1,5 +1,8 @@
 <!--quotes/home.html-->
 
+{% extends 'quotes/base.html' %}
+
+{% block content %}
 <h1>Showing all Quotes</h1>
 
 <!--Display the data from the context data-->
@@ -15,5 +18,6 @@
 
 </ul>
 
+{% endblock %}
 <!--two curly braces tells us its a context object calling, we spicified that it would be called 
 'qoutes' in our views file -->
