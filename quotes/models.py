@@ -47,7 +47,13 @@ class Image(models.Model):
 
     def __str__ (self):
         'return the image url'
-        return self.image_url 
+        
+        if self.image_url:
+
+            return self.image_url 
+
+        else: 
+            return self.image_file.url 
 
 
 

@@ -9,7 +9,7 @@ class CreateQuoteForm(forms.ModelForm): #inherits from django library that creat
     class Meta: 
         '''additional data about this form''' 
         model = Quote # which model to create 
-        feilds = ['text','person'] # which fields to create 
+        fields = ['text','person'] # which fields to create 
 
 
 class UpdateQuoteForm(forms.ModelForm): #inherits from django library that creates a specific form
@@ -18,7 +18,7 @@ class UpdateQuoteForm(forms.ModelForm): #inherits from django library that creat
     class Meta: 
         '''additional data about this form''' 
         model = Quote # which model to create 
-        feilds = ['text','person'] # which fields to create 
+        fields = ['text','person'] # which fields to create 
 
 
 class AddImageForm (forms.ModelForm): 
@@ -26,6 +26,6 @@ class AddImageForm (forms.ModelForm):
 
     class Meta : 
         model = Image  
-        fields = ["image file",] 
+        fields = ["image_file",] 
 
 
