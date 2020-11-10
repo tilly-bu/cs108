@@ -17,6 +17,7 @@ class Person(models.Model):
 
         #select one at random 
         return random.choice(images)
+        
 
 class Quote(models.Model): 
     """represents a quoute attributable to a famous person""" 

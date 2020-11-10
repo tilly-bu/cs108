@@ -10,9 +10,17 @@
 
 <h3>
 
-Emalil Address : {{Profile.email_address}}
+Email Address : {{Profile.email_address}}
 </h3>
 
+<h4>
+    Status Messages: 
+    {% for statuses in Profile.get_status_messages %}
+
+        <li> {{statuses}} </li>
+        
+    {% endfor %}
+</h4>
 
 </center> 
 {% endblock %}

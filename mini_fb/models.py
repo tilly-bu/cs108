@@ -11,23 +11,30 @@ class Profile (models.Model):
     email_address=models.TextField(blank=True) 
     img_src = models.URLField (blank=True) 
 
+
     def __str__(self): 
         "return string representation of the data attributes" 
 
-        return f'First Name: {self.first_name} ,Last Name: {self.last_name} , e-mail: {self.email_address}: {self.img_src}'
+        return f'{self.first_name} ,{self.last_name} ,'
 
+    def get_status_messages(self): 
+
+        status = StatusMessage.objects.filter(profile=self.pk)
+
+        return status
     # def get_absolute_url(self): 
     #     "Provide a URL to show this object"
     #     return reverse ('quote', kwargs={'pk'}
         
 
-# class StatusMessage (models.Model): 
-#     """status message""" 
-#     message = models.TextField(blank=True)
-#     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
+class StatusMessage (models.Model): 
+    """status message""" 
+    message = models.TextField(blank=True)
+    profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
+    time_stamp= models.DateTimeField(auto_now=True)
 
-#     def __str__ (self): 
-#         return f'{self.message} ,' %time.ctime()
+    def __str__ (self): 
+        return f'{self.message} time_stamp,'
 
 
 
