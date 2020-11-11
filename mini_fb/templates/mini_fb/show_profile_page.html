@@ -21,6 +21,20 @@ Email Address : {{Profile.email_address}}
         
     {% endfor %}
 </h4>
+<h5><a href="{% url 'update_profile' Profile.pk %}">Update this Profile</a></h5>
+
+
+
+<h6>Update Profile Status</h6>
+
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{create_status_form}}
+
+    <input type="submit" value="Add Status Message!">
+</form> 
 
 </center> 
 {% endblock %}

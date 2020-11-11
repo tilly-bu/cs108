@@ -1,0 +1,15 @@
+
+{% extends 'mini_fb/base.html' %}
+
+{% block content %}
+<h1>Update a Profile</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <input type="submit" value="Update Profile Info!">
+</form> 
+
+{% endblock %}

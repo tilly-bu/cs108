@@ -2,6 +2,8 @@ from django.db import models
 
 import time
 
+from django.urls import reverse
+
 class Profile (models.Model):
     """ will represent a profile consisting of First name, last name , email address and profile image"""
 
@@ -16,6 +18,12 @@ class Profile (models.Model):
         "return string representation of the data attributes" 
 
         return f'{self.first_name} ,{self.last_name} ,'
+    
+    def get_absolute_url(self):
+        'provide a URL to show the object'
+
+        #Profile/<int:pk>
+        return reverse('Profile',kwargs={'pk',self.pk})
 
     def get_status_messages(self): 
 
@@ -34,7 +42,7 @@ class StatusMessage (models.Model):
     time_stamp= models.DateTimeField(auto_now=True)
 
     def __str__ (self): 
-        return f'{self.message} time_stamp,'
+        return f'{self.message}'
 
 
 
