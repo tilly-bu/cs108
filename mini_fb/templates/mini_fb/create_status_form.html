@@ -1,0 +1,16 @@
+{% extends 'mini_fb/base.html' %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data" action="{% 'add_image' Profile.pk %}"> 
+    {% csrf_token %}
+    {% for field in create_status_form %}
+        {{ field.name , field }}
+    
+    {% endfor %}
+
+
+
+    <input type="submit" value="Add Status Message!">
+</form> 
+
+{% endblock %}

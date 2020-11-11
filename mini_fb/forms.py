@@ -25,6 +25,7 @@ class CreateStatusMessageForm(forms.ModelForm):
     class Meta: 
         'inherit the model to update data too' 
         model = StatusMessage
-        fields = ['message']
+        fields = ['message','img_file']
+
 
 

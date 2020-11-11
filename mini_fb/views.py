@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView , UpdateView 
-from .models import Profile
+from .models import Profile , StatusMessage
 from .forms import CreateProfileForm, UpdateProfileForm , CreateStatusMessageForm
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -66,9 +66,37 @@ def post_status_message(request, pk):
             status_message.profile = profile 
             status_message.save() # now commit to database
 
+            image = form.save(commit=False) #create object without saving
+            image.profile = profile 
+            image.save() #store to database 
+
     # redirect the user to the show_profile_page view
     return redirect(reverse('show_profile_page', kwargs={'pk': pk}))
 
+
+# def add_image(profile, pk): 
+#     'custom view function to handle the submission of an image upload'
+
+#     # find the profile for which we are submitting the status update ? 
+#     profile = Profile.objects.get(pk=pk)
+
+
+#     # read the request data into the CreateStatusMessage Form 
+#     form = CreateStatusMessageForm(request.POST or None, request.FILES or None)
+#     #Check if the form is valid and save the object to the database 
+
+#     if form.is_valid(): 
+
+#         image = form.save(commit=False) #create object without saving
+#         image.profile = profile 
+#         image.save() #store to database 
+
+#     else: 
+#         print("Error: Form is invalid!")
+
+#     # redirect to a new URL , display profile page + status message
+#     url = reverse('profile', kwargs={'pk':pk})
+#     return redirect(url)
 
 
 

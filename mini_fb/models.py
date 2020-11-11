@@ -12,6 +12,7 @@ class Profile (models.Model):
     last_name = models.TextField(blank=True)
     email_address=models.TextField(blank=True) 
     img_src = models.URLField (blank=True) 
+    
 
 
     def __str__(self): 
@@ -40,6 +41,7 @@ class StatusMessage (models.Model):
     message = models.TextField(blank=True)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
     time_stamp= models.DateTimeField(auto_now=True)
+    img_file = models.ImageField(blank=True)
 
     def __str__ (self): 
         return f'{self.message}'

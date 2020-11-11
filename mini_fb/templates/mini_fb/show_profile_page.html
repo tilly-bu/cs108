@@ -16,6 +16,7 @@ Email Address : {{Profile.email_address}}
 <h4>
     Status Messages: 
     {% for statuses in Profile.get_status_messages %}
+    
 
         <li> {{statuses}} </li>
         
@@ -28,7 +29,7 @@ Email Address : {{Profile.email_address}}
 <h6>Update Profile Status</h6>
 
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data" action="{% url 'show_profile_page' Profile.pk %}">
     {% csrf_token %}
 
     {{create_status_form}}
