@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView , UpdateView 
+from django.views.generic import ListView, DetailView 
 from .models import Profile , StatusMessage
 from .forms import CreateProfileForm, UpdateProfileForm , CreateStatusMessageForm
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.views.generic.edit import CreateView , UpdateView , DeleteView
 
 
 # Create your views here.
@@ -97,6 +98,14 @@ def post_status_message(request, pk):
 #     # redirect to a new URL , display profile page + status message
 #     url = reverse('profile', kwargs={'pk':pk})
 #     return redirect(url)
+
+
+class DeleteStatusMessageView (DeleteView): 
+    "Delete an existing profile and store in database"
+
+    model = Profile
+
+    template_name = 'mini_fb/delete_profile.html'  
 
 
 

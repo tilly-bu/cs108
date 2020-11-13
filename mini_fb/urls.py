@@ -8,5 +8,6 @@ urlpatterns =  [
     path('create_profile', CreateProfileView.as_view(), name="create_profile"), 
     path('Profile/<int:pk>/update', UpdateProfileView.as_view(), name="update_profile"),
     path('Profile/<int:pk>/post_status_message', post_status_message, name="create_status_form"),
+    path('Profile/<int:pk>/delete_status', DeleteStatusMessageView.as_view(), name="delete_status"),
 
 ]

@@ -1,0 +1,19 @@
+
+<h3>Are you sure you want to delete this status?</h3>
+
+{{status}}
+
+<p>
+
+</p>
+
+<form method="POST">
+    {% csrf_toekn %}
+    <input type='submit' name="yes" value="yes">
+</form>
+
+<form method="GET" action="{% url 'show_profile_page' Profile.pk %}">
+    {% csrf_toekn %}
+    <input type='submit' name="no" value="no">
+</form>
+
