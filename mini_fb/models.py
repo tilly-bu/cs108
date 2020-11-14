@@ -28,7 +28,7 @@ class Profile (models.Model):
         return reverse('Profile',kwargs={'pk',self.pk})
 
     def get_status_messages(self): 
-
+        'will vall the status messages'
         status = StatusMessage.objects.filter(profile=self.pk)
 
         return status
@@ -37,8 +37,20 @@ class Profile (models.Model):
         return self.friends.all() 
 
     def get_news_feed(self):
-        news = StatusMessage.objects.all().order_by(-"timestamp") 
+        'render a news feed of statuses ordered by time posted'
+        news = StatusMessage.objects.filter(profile=self.pk).order_by(-"timestamp")
+
+        return news
+
+
+    def get_friend_suggestions(self): 
+        'will suggest possible friends'
+
+        possible_friends = friend_suggestions = Profile.objects.all()
+
+        return possible_friends 
         
+
         
     # def get_absolute_url(self): 
     #     "Provide a URL to show this object"

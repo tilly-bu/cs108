@@ -1,0 +1,18 @@
+
+
+
+{% extends 'mini_fb/base.html' %}
+
+{% block content %}
+<h1>Possbile Friends</h1>
+{% for profile in profiles %}
+<ul>                            
+    <li>  {{profile.first_name}}, {{profile.last_name}} <br> {{profile.email_address}}  </li>
+    
+    <img src = "{{profile.img_src}}"style="max-width: 400;">
+</ul>
+{% endfor %}
+
+
+{% endblock %}
+
