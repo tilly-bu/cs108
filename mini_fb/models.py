@@ -12,6 +12,7 @@ class Profile (models.Model):
     last_name = models.TextField(blank=True)
     email_address=models.TextField(blank=True) 
     img_src = models.URLField (blank=True) 
+    friends = models.ManyToManyField("self")
     
 
 
@@ -31,6 +32,14 @@ class Profile (models.Model):
         status = StatusMessage.objects.filter(profile=self.pk)
 
         return status
+
+    def get_friends (self): 
+        return self.friends.all() 
+
+    def get_news_feed(self):
+        news = StatusMessage.objects.all().order_by(-"timestamp") 
+        
+        
     # def get_absolute_url(self): 
     #     "Provide a URL to show this object"
     #     return reverse ('quote', kwargs={'pk'}

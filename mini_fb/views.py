@@ -105,7 +105,14 @@ class DeleteStatusMessageView (DeleteView):
 
     model = Profile
 
-    template_name = 'mini_fb/delete_profile.html'  
+    template_name = 'mini_fb/delete_profile.html'
+
+    def get_success_url(self): 
+            'return URL to which we should be directed after delete' 
+            pk = self.kwargs.get('pk')  
+            pri
+
+
 
 
 

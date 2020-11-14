@@ -37,6 +37,19 @@ Email Address : {{Profile.email_address}}
     <input type="submit" value="Add Status Message!">
 </form> 
 
+<h7> <a href="{% url 'delete_status' Profile.pk %}"> Delete a Status ? </a> </h7>
+
+<br>
+<li>
+
+</li>
+
+<!-- {% if profile.get_friends %}
+{{profile.get_friends}}
+{% else %}
+{{profile.first_name}} doesn't have any friends.
+{% endif %} -->
+
 </center> 
 {% endblock %}
 
