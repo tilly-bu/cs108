@@ -1,0 +1,19 @@
+<!--This is a template html that will display the excercises that we have coded into the admin tool--> 
+
+<h1>Showing all Workouts</h1>  
+
+<!--Display the data in the model by calling the context object name--> 
+
+<!--Workouts displayed in a loop for aesthetic purposes-->
+<ul>
+{% for workout in workouts %} <!--workout is the runner variable through queryset workouts-->
+
+<li>
+    {{workout.name}} - {{workout.description}} <br>
+
+    <img src = "{{workout.image_url}}"style="max-width: 300;">  
+</li>
+
+
+{% endfor %}
+</ul>
