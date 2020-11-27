@@ -107,10 +107,37 @@ class DeleteStatusMessageView (DeleteView):
 
     template_name = 'mini_fb/delete_profile.html'
 
-    def get_success_url(self): 
-            'return URL to which we should be directed after delete' 
-            pk = self.kwargs.get('pk')  
-            pri
+    # def get_success_url(self): 
+    #         'return URL to which we should be directed after delete' 
+    #         pk = self.kwargs.get('pk')  
+
+class ShowNewsFeedView (DetailView): 
+    'shows your the news feed' 
+    model = Profile 
+
+    template_name = 'mini_fb/show_news_feed.html' 
+
+    context_object_name = 'show_news_feed' 
+
+
+# class ShowPossibleFriendsView(DetailView): 
+#     model = Profile 
+#     template_name = show_possible_friends.html 
+
+
+# def add_friend(request,profile_pk,friend_pk) 
+    
+#     freind= url = reverse('profile', kwargs={'pk':pk}
+
+#     profile.friend += freind 
+
+    
+
+
+
+
+
+            
 
 
 

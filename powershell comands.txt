@@ -8,12 +8,45 @@ git - a way to save your code, make sure its not lost
 heroku - a way to make your application public so that graders (and any audience you want) can see its  
         - we use heroku becuase the BU system can't support heroku 
 
-    2 python manage.py runserver
-   3 pipenv lock
-   4 git status
-   5 git commit -A
-   6 git add -a
-   7 git add -A
-   8 git commit -m "added Pipfile"
-   9 git push heroku master
+python manage.py runserver
+git status
+git add -a
+git add -A
+git commit -m "added Pipfile"
+git push heroku master
+
+python manage.py startapp -- creates a new application on Django 
+    creating a new project : 
+        will create a new directory for the app you just created  and will update it 
+            you must go into the CS108 'settings.py' file and add an app with the name that you find in 
+            'apps' file of the new app that you just created. 
+            
+            nameofapp.apps.filename that you find in the 'apps' file in the directory that you just created 
+
+
+views.py : allow us to create a response to a webrequest : 
+    browser will request the functions contained in the views file. 
+    
+
+urls.py : will help us to direct requests to a specific function : 
+    step 1) from django.urls import path 
+
+    step 2) import the function that you just wrote in the views file. 
+        from .views import the function that you created that you want to correspond to a url 
+
+    step 3) write out the following and fill it as you go
+        urlpatterns = [  
+            path('',function_from_views.py,name=chose_a_name), - 
+        ]
+                django will recognize this command to map views to templates to URLS
+
+    step 4) urls.py--> CS108 file :
+    get the url that you created in your all to show up at the larger scale 
+        urlpatterns = [
+                path ('what_you_want_the_app_reffered_too_as',include('name_you_chose_in_app_level_url_file')) 
+                ] 
+
+
+
+    
 

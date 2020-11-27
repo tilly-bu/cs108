@@ -49,6 +49,7 @@ Email Address : {{Profile.email_address}}
 {% else %}
 {{profile.first_name}} doesn't have any friends.
 {% endif %} -->
+<a href="{% url 'show_possible_friends' %}">Possible Freinds</a> 
 
 </center> 
 {% endblock %}
