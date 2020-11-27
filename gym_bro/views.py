@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView , ListView 
+from django.views.generic import TemplateView , ListView , DetailView
 from .models import Workout
 
 # Create your views here.
@@ -10,10 +10,6 @@ class HomePageView(TemplateView):
     template_name = "gym_bro/Gym_Bro_Home_PageView.html" # template that is the homepage
 
 
-class ExcerciseView (TemplateView): 
-    "specialized template that will show us all the excercies that we have available" 
-
-    template_name = "gym_bro/excercise.html"
 
 class WorkoutsPageView (ListView): # list view allows us to represent many objects from the same model
     "show us a list of the Workouts hard coded into admin" 
@@ -24,6 +20,16 @@ class WorkoutsPageView (ListView): # list view allows us to represent many objec
 
     context_object_name = 'workouts' #remember lowercase w 
     # ^ name of the variable to call from templates 
+
+
+class SingleWorkoutPageView (DetailView):
+
+    model = Workout
+    template_name = "gym_bro/single_workout.html"
+
+
+    context_object_name = 'workout' #singular , only 1
+
     
 
 

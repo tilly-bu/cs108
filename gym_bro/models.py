@@ -15,3 +15,6 @@ class Workout(models.Model):
         "return a string representation of the excercise" 
 
         return f'{self.name}'
+
+
+
