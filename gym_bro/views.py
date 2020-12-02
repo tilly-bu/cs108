@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView , ListView , DetailView
-from .models import Workout
-
+from .models import Workout , Program
+import random
 # Create your views here.
 
 class HomePageView(TemplateView): 
@@ -23,12 +23,44 @@ class WorkoutsPageView (ListView): # list view allows us to represent many objec
 
 
 class SingleWorkoutPageView (DetailView):
+    "render a single workout by entering a pk"
 
     model = Workout
     template_name = "gym_bro/single_workout.html"
 
 
     context_object_name = 'workout' #singular , only 1
+
+
+class RandomWorkoutPageView (DetailView):
+    "display a random workout for inspiration"
+
+    model = Workout
+    template_name = "gym_bro/single_workout.html"
+
+
+    context_object_name = 'workout' #singular , only 1
+
+    def get_object(self): 
+        "select a random workout to display"
+
+        #obtain all workouts 
+        all_workouts = Workout.objects.all()
+        #select one at random 
+        random_workout = random.choice(all_workouts) 
+
+        return random_workout 
+
+
+class ProgramPageView (DetailView): 
+    model = Program  #retrive the program objects from database
+    template_name = "gym_bro/program.html" # delegate display to this url 
+    context_object_name = "program" #use this variable name to call objects in the template 
+
+    
+
+        
+
 
     
 
