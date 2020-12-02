@@ -1,0 +1,29 @@
+<!--gym_bro/program.html-->
+<!--Template to veiw one users excercise Program-->
+<!--will need a lot of formating keep in mind for later : chronological view, reps , sets, functions to see change?-->
+<html>   
+
+<h1>Workouts for the user</h1>
+<ul>
+{% for p in program %}
+
+{{p.user}}
+<br>
+<br>
+{{p.date}} 
+<br> 
+<br>
+{{p.excercises}}
+<br> 
+<br>
+REPS : {{p.reps}}
+<br>
+<br> 
+Sets: {{p.sets}} 
+
+{% endfor %}
+</ul>
+
+
+
+</html>

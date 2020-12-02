@@ -22,10 +22,11 @@ class Program(models.Model):
 
     user = models.ForeignKey('User', on_delete=models.CASCADE) 
     excercises = models.ForeignKey(Workout, on_delete=models.CASCADE)
-    reps = models.TextField (blank=True)
-    sets = models.TextField (blank=True) #is there a way to add numeric feilds ?
+    reps = models.IntegerField (blank=True)
+    sets = models.IntegerField (blank=True) #is there a way to add numeric feilds ?
     date = models.DateField (blank=True,default=datetime.date.today)
 
+    
     def __str__ (self): 
         return f'Today we did: {self.excercises}'
 
@@ -40,5 +41,13 @@ class User(models.Model):
         "return a string representation of the first name"
 
         return f'{self.user_name}'
+
+    def get_program_data(self): 
+        "return all the data from to Programs model associated with this person"
+
+        # use object manager to filter program data objects associated with the Users PK
+
+        return Program.objects.filter(user=self) 
+
     
 

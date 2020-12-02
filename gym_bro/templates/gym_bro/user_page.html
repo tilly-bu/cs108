@@ -1,0 +1,23 @@
+
+<h1> Welcome {{user_page}} : Below is your program so far</h1>
+
+<h2>YOUR PROGRAM! </h2>
+
+<ul>
+    {% for p in user_page.get_program_data %}
+    
+    <br>
+    {{p.date}} 
+    <br> 
+    
+    {{p.excercises}}
+    <br> 
+    
+    REPS : {{p.reps}}
+    <br>
+    
+    Sets: {{p.sets}} 
+    
+    {% endfor %}
+    </ul>
+    

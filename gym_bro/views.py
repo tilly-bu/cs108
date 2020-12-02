@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView , ListView , DetailView
-from .models import Workout , Program
+from .models import Workout , Program , User
 import random
 # Create your views here.
 
@@ -52,12 +52,27 @@ class RandomWorkoutPageView (DetailView):
         return random_workout 
 
 
-class ProgramPageView (DetailView): 
+class ProgramPageView (ListView): 
     model = Program  #retrive the program objects from database
     template_name = "gym_bro/program.html" # delegate display to this url 
     context_object_name = "program" #use this variable name to call objects in the template 
 
+
+class UserPageView (DetailView):
+    "User page with program info and ability to update with new workouts"
+
+    model = User
+    template_name = "gym_bro/user_page.html"
+
+
+    context_object_name = 'user_page' 
+
+
+
     
+
+
+
 
         
 
