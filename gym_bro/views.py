@@ -4,11 +4,14 @@ from .models import Workout , Program , User
 import random
 # Create your views here.
 
-class HomePageView(TemplateView): 
+class HomePageView(ListView): 
     "specialized version of template view that will display our homepage"
+
+    model = User
 
     template_name = "gym_bro/Gym_Bro_Home_PageView.html" # template that is the homepage
 
+    context_object_name = 'user_names'
 
 
 class WorkoutsPageView (ListView): # list view allows us to represent many objects from the same model

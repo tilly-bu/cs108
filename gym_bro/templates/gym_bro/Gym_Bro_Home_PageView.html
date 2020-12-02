@@ -7,7 +7,14 @@
 <h1> GYMBRO! </h1>
 <p>
 Welcome to the homepage or Gym Bro. </br>
-We plan to include more features so please stay tuned! 
+Select your username to view your workout program and update! 
+<br>
+<ul>
+    {% for u in user_names %}
+    User Name : {{u}} 
+    <br>
+    {% endfor %}
+</ul>
 </p>
 <hr> 
 </center>
