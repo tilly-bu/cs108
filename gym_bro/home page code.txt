@@ -1,0 +1,2 @@
+<!--<a href="{% url 'user_page' user_page.user.pk %}"></a>-->
+<!--^^^ above I want to add a link that sends the username to the corresponding user-page-->
