@@ -11,5 +11,6 @@ urlpatterns = [
     path ('random',RandomWorkoutPageView.as_view(), name='random'),
     path ('program/<int:pk>',ProgramPageView.as_view(),name='program'),
     path ('user_page/<int:pk>',UserPageView.as_view(),name='user_page'),
+    path ('update_program',UpdateProgramView.as_view(),name='update_program')
 ] 
 

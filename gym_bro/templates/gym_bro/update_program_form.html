@@ -1,0 +1,10 @@
+<!--templates/gym_bro/update_program_form.html-->
+
+<h1>Add Todays Workout! </h1>
+
+<form method='POST'> <!--Send form data to the server!-->
+    {% csrf_token %}
+    
+    {{form}}
+    <input type="submit" value="Add The workout to your program!">
+</form>

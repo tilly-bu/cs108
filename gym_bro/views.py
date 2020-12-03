@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView , ListView , DetailView
+from django.views.generic import TemplateView , ListView , DetailView, CreateView
 from .models import Workout , Program , User
 import random
+from .forms import UpdateProgramForm
 # Create your views here.
 
 class HomePageView(ListView): 
@@ -69,6 +70,14 @@ class UserPageView (DetailView):
 
 
     context_object_name = 'user_page' 
+
+class UpdateProgramView(CreateView): 
+    "update the program of a user"
+
+    model = Program 
+    form_class = UpdateProgramForm
+    template_name = "gym_bro/update_program_form.html"
+
 
 
 

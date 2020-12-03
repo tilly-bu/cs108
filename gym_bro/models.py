@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.urls import reverse
 
 # Create your models here.
 
@@ -25,6 +26,13 @@ class Program(models.Model):
     reps = models.IntegerField (blank=True)
     sets = models.IntegerField (blank=True) #is there a way to add numeric feilds ?
     date = models.DateField (blank=True,default=datetime.date.today)
+
+    def  get_absolute_url(self): 
+        'provide a URL to show the desired object' 
+
+        #'program/<int:pk>'
+
+        return reverse('program', kwargs={'pk':self.pk})
 
     
     def __str__ (self): 
