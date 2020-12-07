@@ -22,7 +22,7 @@ class Program(models.Model):
     "represents the excercies that a user has completed and the date of completion" 
 
     user = models.ForeignKey('User', on_delete=models.CASCADE) 
-    excercises = models.ForeignKey(Workout, on_delete=models.CASCADE)
+    workouts = models.ForeignKey(Workout, on_delete=models.CASCADE)
     reps = models.IntegerField (blank=True)
     sets = models.IntegerField (blank=True) #is there a way to add numeric feilds ?
     date = models.DateField (blank=True,default=datetime.date.today)
@@ -36,7 +36,7 @@ class Program(models.Model):
 
     
     def __str__ (self): 
-        return f'Today we did: {self.excercises}'
+        return f'Today we did: {self.workouts}'
 
 class User(models.Model): 
     "represents a single users information, and the relationship between the user and the program"

@@ -8,5 +8,5 @@ class UpdateProgramForm(forms.ModelForm):
     class Meta: 
         'additional data to inform the form what model to update' 
         model = Program #which program to update
-        fields = ['user','excercises','reps','sets','date'] #data attributes to pick
+        fields = ['user','workouts','reps','sets','date'] #data attributes to pick
         
