@@ -1,0 +1,22 @@
+<!--Form to add am excercise to the workout directory--> 
+
+
+<h1> Add an Excercise to the Workouts directory</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <table>
+        {{form.as_table}}
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add Excercise"></td>
+        </tr>
+
+        
+
+    </table>
+
+    
+  
+</form>

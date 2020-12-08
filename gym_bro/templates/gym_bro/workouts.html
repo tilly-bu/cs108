@@ -11,9 +11,12 @@
 <li>
     {{workout.name}} - {{workout.description}} <br>
 
-    <img src = "{{workout.image_url}}"style="max-width: 300;">  
+    <img src = "{{workout.image_url}}"style="width: 300;">  
 </li>
 
 
 {% endfor %}
+
+<a href="{% url 'create_workout' %}">Add and Excercies!!</a>|
+
 </ul>

@@ -18,6 +18,11 @@ class Workout(models.Model):
 
         return f'{self.name}'
 
+    def  get_absolute_url(self): 
+        'provide a URL to show the desired object' 
+
+        return 'workouts'
+
 class Program(models.Model):
     "represents the excercies that a user has completed and the date of completion" 
 
@@ -26,6 +31,13 @@ class Program(models.Model):
     reps = models.IntegerField (blank=True)
     sets = models.IntegerField (blank=True) #is there a way to add numeric feilds ?
     date = models.DateField (blank=True,default=datetime.date.today)
+
+    # def get_program_data(self): 
+    #     "return all the data from to Programs model associated with this person"
+
+    #     # use object manager to filter program data objects associated with the Users PK
+
+    #     return Program.objects.filter(user=reverse(kwargs={'pk':self.pk})) 
 
     def  get_absolute_url(self): 
         'provide a URL to show the desired object' 

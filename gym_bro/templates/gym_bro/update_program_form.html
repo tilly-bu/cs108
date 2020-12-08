@@ -4,7 +4,13 @@
 
 <form method='POST'> <!--Send form data to the server!-->
     {% csrf_token %}
-    
-    {{form}}
-    <input type="submit" value="Add The workout to your program!">
+
+    <table > 
+         {{form.as_table}}
+        <tr>  
+            <td></td> 
+        <td> <input type="submit" value="Add The workout to your program!"> </td> 
+        </tr>
+    </table>
 </form>
+

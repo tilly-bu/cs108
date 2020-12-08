@@ -1,9 +1,18 @@
 <!--gym_bro/program.html-->
 <!--Template to veiw one users excercise Program-->
 <!--will need a lot of formating keep in mind for later : chronological view, reps , sets, functions to see change?-->
+<!--Major Bug found in the last minute : This template displays data for all users, does not filter
+To avoid crisis by rearranging, I simply added links to the individual users-->
+
 <html>   
 
-<h1>Workouts for the user {{program.user}}</h1>
+<center>
+<h1>Workouts for All Users! </h1>
+Return to the Home Page to select a single user <a href="{% url 'home' %}">here!</a>|
+
+    <h2>Here you can compare your program progress with others as they update in real time!<h2>
+</center>
+
 <ul>
 {% for p in program %}
 
@@ -11,7 +20,7 @@ On {{p.date}} , {{p.user}} did : REPS : {{p.reps}} Sets: {{p.sets}}
 <br>
 {{p.excercises}}
 <br>
-for ::{{p.reps}} REPS {{p.reps}} and {{p.sets}} Sets: 
+for :{{p.reps}} REPS {{p.reps}} and {{p.sets}} Sets: 
 <br> 
 
 
