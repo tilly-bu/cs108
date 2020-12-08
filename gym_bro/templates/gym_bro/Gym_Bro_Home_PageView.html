@@ -12,11 +12,15 @@ Select your username to view your workout program and update!
 <ul>
     {% for u in user_names %}
     User Name : <a href="{% url 'user_page' u.pk %}">{{u}} </a> 
+
+    
     <br>
     {% endfor %}
 </ul>
 </p>
-
+<p>
+<a href="{% url 'add_user' %}">ADD A USER !</a>|
+</p>
 <a href="{% url 'random' %}">Random workout for inspiration!</a>|
 
 <hr> 

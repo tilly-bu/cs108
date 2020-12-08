@@ -69,5 +69,10 @@ class User(models.Model):
 
         return Program.objects.filter(user=self) 
 
+    def  get_absolute_url(self): 
+        'provide a URL to show the desired object' 
+
+        return 'home'
+
     
 

@@ -1,6 +1,6 @@
 #forms.py 
 from django import forms
-from .models import Workout, Program
+from .models import Workout, Program , User
 
 class UpdateProgramForm(forms.ModelForm): 
     'a form to add a workout day to our programs model' 
@@ -18,4 +18,35 @@ class CreateWorkoutForm(forms.ModelForm):
         'additional data for the form' 
         model = Workout 
         fields = ['name','description','image_url']
+
+
+class CreateUserForm(forms.ModelForm): 
+    ' a form to create users' 
+
+    class Meta: 
+        'additional Data for the form ' 
+        model = User 
+        fields = ['first_name','last_name','user_name'] 
+
+
+class EditExcerciseForm(forms.ModelForm): 
+    'a form to update an excercise to the workouts directory ' 
+
+    class Meta: 
+        'additional data for the form' 
+        model = Workout 
+        fields = ['name','description','image_url']
+
+
+
+
+# class DeleteUserForm(forms.ModelForm): 
+#     ' a form to delete users' 
+
+#     class Meta: 
+#         'additional Data for the form ' 
+#         model = User 
+#         fields = ['first_name','last_name','user_name'] 
+
+        
         

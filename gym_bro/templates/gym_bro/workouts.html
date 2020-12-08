@@ -1,20 +1,36 @@
 <!--This is a template html that will display the excercises that we have coded into the admin tool--> 
 
 <h1>Showing all Workouts</h1>  
+<a href="{% url 'create_workout' %}">Add an Excercies!!</a>|
 
 <!--Display the data in the model by calling the context object name--> 
 
 <!--Workouts displayed in a loop for aesthetic purposes-->
-<ul>
+
 {% for workout in workouts %} <!--workout is the runner variable through queryset workouts-->
 
-<li>
-    {{workout.name}} - {{workout.description}} <br>
+<table>
 
-    <img src = "{{workout.image_url}}"style="width: 300;">  
-</li>
+<tr> 
+    <td>
+    {{workout.name}}
+    </td>
+    <td></td>
+    <td>
+    {{workout.description}} 
+    </td>
+    <td></td>
+    <td>  
+    <img src = "{{workout.image_url}}"style="width: 250;">  
+    </td> 
+    <td></td> 
+</tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
 
 
+</table>
 {% endfor %}
 
 <a href="{% url 'create_workout' %}">Add and Excercies!!</a>|

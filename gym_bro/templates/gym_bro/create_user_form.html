@@ -1,0 +1,20 @@
+<!--Form To add a user to the directory --> 
+
+<center> 
+<h1>Add a User </h1>
+
+<form method='POST'> <!--Send form data to the server!-->
+    {% csrf_token %}
+
+    <table > 
+         {{form.as_table}}
+        <tr>  
+            <td></td> 
+        <td> <input type="submit" value="Add Your User!"> </td> 
+        </tr>
+    </table>
+
+</form>
+
+</center>
+

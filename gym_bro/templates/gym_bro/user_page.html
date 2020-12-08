@@ -3,21 +3,31 @@
 
 <h2>YOUR PROGRAM! </h2>
 
-<ul>
+<h3><a href="{% url 'update_program' %}">Update Program By adding a Workout here!</a></h3>
+
+
+
+    
     {% for p in user_page.get_program_data %}
     
-    <br>
-    {{p.date}} 
-    <br> 
+    <table> 
+    <tr>   
+    <td> 
     
-    {{p.excercises}}
-    <br> 
-    
-    REPS : {{p.reps}}
-    <br>
-    
-    Sets: {{p.sets}} 
-    
+    {{p.date}} ||
+    </td> 
+    <td>
+    {{p.excercises}}  ||
+    </td>
+    <td> 
+    REPS : {{p.reps}} ||
+    </td>
+    <td> 
+    Sets: {{p.sets}} ||
+    </td>
+    </tr>
+
     {% endfor %}
-    </ul>
+   
+    
     

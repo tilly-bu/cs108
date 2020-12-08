@@ -13,21 +13,23 @@ Return to the Home Page to select a single user <a href="{% url 'home' %}">here!
     <h2>Here you can compare your program progress with others as they update in real time!<h2>
 </center>
 
-<ul>
+
 {% for p in program %}
+<table> 
+<tr> 
 
-On {{p.date}} , {{p.user}} did : REPS : {{p.reps}} Sets: {{p.sets}} 
-<br>
-{{p.excercises}}
-<br>
-for :{{p.reps}} REPS {{p.reps}} and {{p.sets}} Sets: 
-<br> 
+    <td> On {{p.date}} , </td> 
+    <td> {{p.user}} Did  {{p.excercises}} </td> 
+    <td> For  {{p.reps}} reps : {{p.sets}} Sets  </td>
 
+    
 
-<p>
+<td></td> 
+<td></td>
+<tr></tr><tr></tr><tr></tr>
+</tr> 
 
-</p>
-
+</table>
 {% endfor %}
 </ul>
 

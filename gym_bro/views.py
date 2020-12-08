@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView , ListView , DetailView, CreateView
+from django.views.generic import TemplateView , ListView , DetailView, CreateView , UpdateView
 from .models import Workout , Program , User
 import random
-from .forms import UpdateProgramForm, CreateWorkoutForm
+from .forms import * #UpdateProgramForm, CreateWorkoutForm , CreateUserForm
 # Create your views here.
 
 class HomePageView(ListView): 
@@ -86,10 +86,28 @@ class UpdateProgramView(CreateView):
 
 
 class CreateWorkoutView(CreateView): 
+    "view for form to create and excercise to add to the workouts directory"
 
     model = Workout 
     form_class = CreateWorkoutForm 
     template_name = "gym_bro/create_workout_form.html" 
+
+
+class CreateUserView (CreateView):  
+    "view for creating a user profile"
+
+    model = User 
+    form_class = CreateUserForm 
+    template_name = "gym_bro/create_user_form.html" 
+
+class EditWorkoutView(UpdateView): 
+    'update a Workout object (also known as an excercise)' 
+
+    model = Workout 
+    form_class = EditExcerciseForm 
+    template_name = "gym_bro/edit_workout_form.html"  
+     
+
     
 
 
