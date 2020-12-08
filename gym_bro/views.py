@@ -56,10 +56,16 @@ class RandomWorkoutPageView (DetailView):
         return random_workout 
 
 
+# class ProgramPageView (ListView): 
+#     model = Program  #retrive the program objects from database
+#     template_name = "gym_bro/program.html" # delegate display to this url 
+#     context_object_name = "program" #use this variable name to call objects in the template 
+
 class ProgramPageView (ListView): 
     model = Program  #retrive the program objects from database
     template_name = "gym_bro/program.html" # delegate display to this url 
     context_object_name = "program" #use this variable name to call objects in the template 
+
 
 
 class UserPageView (DetailView):
