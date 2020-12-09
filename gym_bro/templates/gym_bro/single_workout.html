@@ -1,4 +1,6 @@
 <!--This template displays a single workout acording to its PK--> 
+{% extends 'gym_bro/base.html' %} 
+{% block content %}
 
 <center> 
 <h1> {{workout.name}} </h1> 
@@ -12,6 +14,7 @@
      <a href="{% url 'edit_workout' workout.pk%}"> Update this workout</a>
  </h4>
 
+ {% endblock %}
 
 
 

@@ -1,5 +1,8 @@
 <!--templates/gym_bro/update_program_form.html-->
 
+{% extends 'gym_bro/base.html' %} 
+{% block content %}
+
 <h1>Add Todays Workout! </h1>
 
 <form method='POST'> <!--Send form data to the server!-->
@@ -14,3 +17,5 @@
     </table>
 </form>
 
+
+{% endblock %}

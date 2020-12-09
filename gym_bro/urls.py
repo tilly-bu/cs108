@@ -15,7 +15,7 @@ urlpatterns = [
     path ('update_program',UpdateProgramView.as_view(),name='update_program'),
     path ('create_workout',CreateWorkoutView.as_view(),name='create_workout'),
     path ('add_user',CreateUserView.as_view(),name='add_user'),
-
+     path ('user_page/<int:pk>/delete_user',DeleteUserView.as_view(),name='delete_user'),
 ] 
 
 

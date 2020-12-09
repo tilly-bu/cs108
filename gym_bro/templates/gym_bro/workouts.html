@@ -1,8 +1,11 @@
 <!--This is a template html that will display the excercises that we have coded into the admin tool--> 
+{%extends 'gym_bro/base.html' %} 
+{% block content %}
 
 <h1>Showing all Workouts</h1>  
-<a href="{% url 'create_workout' %}">Add an Excercies!!</a>|
-
+<p> 
+Add an Excercise By clicking <a href="{% url 'create_workout' %}">here.</a>|
+</p>
 <!--Display the data in the model by calling the context object name--> 
 
 <!--Workouts displayed in a loop for aesthetic purposes-->
@@ -33,6 +36,8 @@
 </table>
 {% endfor %}
 
-<a href="{% url 'create_workout' %}">Add and Excercies!!</a>|
+Add an Excercise By clicking <a href="{% url 'create_workout' %}">here.</a>|
 
 </ul>
+
+{% endblock %}

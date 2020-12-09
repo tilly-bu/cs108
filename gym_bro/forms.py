@@ -40,13 +40,6 @@ class EditExcerciseForm(forms.ModelForm):
 
 
 
-# class DeleteUserForm(forms.ModelForm): 
-#     ' a form to delete users' 
-
-#     class Meta: 
-#         'additional Data for the form ' 
-#         model = User 
-#         fields = ['first_name','last_name','user_name'] 
 
         
         

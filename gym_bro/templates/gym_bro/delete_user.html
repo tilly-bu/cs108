@@ -1,0 +1,21 @@
+
+<!--template to prompt the user to delete a user from the database --> 
+
+<h3>Are you sure you want to delete this user and all the associated program data? </h3>
+
+{{duser.}} 
+
+<p>
+
+</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type='submit' name="yes" value="yes">
+</form>
+
+<form method="GET" action="{% url 'home' %}">
+    {% csrf_token %}
+    <input type='submit' name="no" value="no">
+</form>
+

@@ -1,4 +1,7 @@
 
+{% extends 'gym_bro/base.html' %} 
+{% block content %}
+
 <h1> Welcome {{user_page}} : Below is your program so far</h1>
 
 <h2>YOUR PROGRAM! </h2>
@@ -28,6 +31,12 @@
     </tr>
 
     {% endfor %}
+
+    <a href="% url 'delete_user' user_page.pk%">Delete User</a>
+
+
+    {% endblock %}
+
    
     
     

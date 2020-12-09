@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView , ListView , DetailView, CreateView , UpdateView
+from django.views.generic import TemplateView , ListView , DetailView, CreateView , UpdateView , DeleteView
 from .models import Workout , Program , User
 import random
 from .forms import * #UpdateProgramForm, CreateWorkoutForm , CreateUserForm
@@ -56,10 +56,6 @@ class RandomWorkoutPageView (DetailView):
         return random_workout 
 
 
-# class ProgramPageView (ListView): 
-#     model = Program  #retrive the program objects from database
-#     template_name = "gym_bro/program.html" # delegate display to this url 
-#     context_object_name = "program" #use this variable name to call objects in the template 
 
 class ProgramPageView (ListView): 
     model = Program  #retrive the program objects from database
@@ -84,7 +80,6 @@ class UpdateProgramView(CreateView):
     form_class = UpdateProgramForm
     template_name = "gym_bro/update_program_form.html"
 
-
 class CreateWorkoutView(CreateView): 
     "view for form to create and excercise to add to the workouts directory"
 
@@ -106,6 +101,15 @@ class EditWorkoutView(UpdateView):
     model = Workout 
     form_class = EditExcerciseForm 
     template_name = "gym_bro/edit_workout_form.html"  
+
+
+class DeleteUserView(DeleteView): 
+    'view to delete a user and save that change to data base' 
+
+    template_name = "gym_bro/delete_user.html"
+    queryset = User.objects.all() 
+    success_url = "../../home"
+    context_object_name = 'duser'
      
 
     

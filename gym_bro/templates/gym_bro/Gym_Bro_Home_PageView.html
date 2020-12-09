@@ -1,25 +1,51 @@
 <!--The default home page when you request /gym_bro-->
-{%extends 'gym_bro/base.html' %} 
+<!--Could not figure out how-->
+{% extends 'gym_bro/base.html' %} 
 {% block content %}
 <html>
 <center>
-<head><title>Home Page</title></head>
-<h1> GYMBRO! </h1>
-<p>
-Welcome to the homepage or Gym Bro. </br>
-Select your username to view your workout program and update! 
-<br>
-<ul>
-    {% for u in user_names %}
-    User Name : <a href="{% url 'user_page' u.pk %}">{{u}} </a> 
 
-    
-    <br>
-    {% endfor %}
-</ul>
-</p>
+<h1> HOME </h1>
 <p>
-<a href="{% url 'add_user' %}">ADD A USER !</a>|
+<h2> Welcome to Gym Bro.  </h2>
+
+<h3> Gym Bro is an online Platform that hopes to aid you in your fitness Journey </h3>  
+<p> 
+    Start your journey and add yourself as a user <a href="{% url 'add_user' %}">here!</a>|
+</p>
+
+<p> View All of our Excercies to add to your program <a href="{% url 'workouts' %}">here!</a>| </p>
+
+
+
+</p>
+Already a User? Select your username to view your workout program <br> and update with excercises that you have completed <br>
+by selecting your user name below!  
+<br>
+    {% for u in user_names %}
+
+    <table>  
+        <tr> 
+            <td>
+                User Name : 
+            </td>
+            <td> 
+                <a href="{% url 'user_page' u.pk %}">{{u}} </a> 
+            
+            </td>
+            </td>
+            <td> </td>
+            <td> 
+                 
+            </td>
+        </tr>
+    </table>
+   
+    {% endfor %}
+
+
+<p>
+
 </p>
 <a href="{% url 'random' %}">Random workout for inspiration!</a>|
 

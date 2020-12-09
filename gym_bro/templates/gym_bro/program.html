@@ -3,7 +3,8 @@
 <!--will need a lot of formating keep in mind for later : chronological view, reps , sets, functions to see change?-->
 <!--Major Bug found in the last minute : This template displays data for all users, does not filter
 To avoid crisis by rearranging, I simply added links to the individual users-->
-
+{% extends 'gym_bro/base.html' %} 
+{% block content %}
 <html>   
 
 <center>
@@ -36,3 +37,5 @@ Return to the Home Page to select a single user <a href="{% url 'home' %}">here!
 
 
 </html>
+
+{% endblock %}
