@@ -1,4 +1,4 @@
-<!--This template displays a single workout accouring to its PK--> 
+<!--This template displays a single workout acording to its PK--> 
 
 <center> 
 <h1> {{workout.name}} </h1> 
@@ -7,6 +7,10 @@
 <br>
 
  <img src = "{{workout.image_url}}"style="max-width: 300;"> 
+
+ <h4> 
+     <a href="{% url 'edit_workout' workout.pk%}"> Update this workout</a>
+ </h4>
 
 
 
