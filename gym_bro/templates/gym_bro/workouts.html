@@ -1,7 +1,7 @@
 <!--This is a template html that will display the excercises that we have coded into the admin tool--> 
 {%extends 'gym_bro/base.html' %} 
 {% block content %}
-
+<body style="background-color: gainsboro;"> 
 <h1>Showing all Workouts</h1>  
 <p> 
 Add an Excercise By clicking <a href="{% url 'create_workout' %}">here.</a>|
@@ -12,21 +12,26 @@ Add an Excercise By clicking <a href="{% url 'create_workout' %}">here.</a>|
 
 {% for workout in workouts %} <!--workout is the runner variable through queryset workouts-->
 
-<table>
+<table border="1"> 
 
+<tr>
+    <th>NAME</th>
+    <th>Description</th>
+    <th>IMAGE</th>
+</tr>
 <tr> 
     <td>
     {{workout.name}}
     </td>
-    <td></td>
+    
     <td>
     {{workout.description}} 
     </td>
-    <td></td>
+    
     <td>  
     <img src = "{{workout.image_url}}"style="width: 250;">  
     </td> 
-    <td></td> 
+    
 </tr>
 <tr></tr>
 <tr></tr>
@@ -34,6 +39,7 @@ Add an Excercise By clicking <a href="{% url 'create_workout' %}">here.</a>|
 
 
 </table>
+</body>
 {% endfor %}
 
 Add an Excercise By clicking <a href="{% url 'create_workout' %}">here.</a>|

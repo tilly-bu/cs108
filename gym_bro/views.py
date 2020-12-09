@@ -110,6 +110,8 @@ class DeleteUserView(DeleteView):
     queryset = User.objects.all() 
     success_url = "../../home"
     context_object_name = 'duser'
+
+    
      
 
     
